@@ -16,3 +16,7 @@ Ali/.env.example
 *.code-workspace
 /Data
 gcp_credentials.json
+Ali/Backup
+Ali/audio_recovery/
+Ali/playwright_downloads/
+Ali/playwright_ig_profile/

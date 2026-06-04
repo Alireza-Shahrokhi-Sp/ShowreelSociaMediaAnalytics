@@ -1,0 +1,44 @@
+﻿metric,window_id,window_label,window_index,threshold_type,low_threshold,high_threshold,single_threshold
+recency,,,,low_high_global,0.25,0.666667,
+engagement,,,,low_high_global,6.0,15.0,
+gini,,,,low_high_fixed,0.2,0.6,
+coverage,w01,2022-09 to 2022-12,1,single_window_specific,,,0.02857142857142857
+coverage,w02,2022-10 to 2023-01,2,single_window_specific,,,0.02564102564102564
+coverage,w03,2022-11 to 2023-02,3,single_window_specific,,,0.018867924528301886
+coverage,w04,2022-12 to 2023-03,4,single_window_specific,,,0.018867924528301886
+coverage,w05,2023-01 to 2023-04,5,single_window_specific,,,0.02127659574468085
+coverage,w06,2023-02 to 2023-05,6,single_window_specific,,,0.023255813953488372
+coverage,w07,2023-03 to 2023-06,7,single_window_specific,,,0.03225806451612903
+coverage,w08,2023-04 to 2023-07,8,single_window_specific,,,0.04
+coverage,w09,2023-05 to 2023-08,9,single_window_specific,,,0.043478260869565216
+coverage,w10,2023-06 to 2023-09,10,single_window_specific,,,0.05
+coverage,w11,2023-07 to 2023-10,11,single_window_specific,,,0.05
+coverage,w12,2023-08 to 2023-11,12,single_window_specific,,,0.05263157894736842
+coverage,w13,2023-09 to 2023-12,13,single_window_specific,,,0.0625
+coverage,w14,2023-10 to 2024-01,14,single_window_specific,,,0.05555555555555555
+coverage,w15,2023-11 to 2024-02,15,single_window_specific,,,0.0625
+coverage,w16,2023-12 to 2024-03,16,single_window_specific,,,0.06666666666666667
+coverage,w17,2024-01 to 2024-04,17,single_window_specific,,,0.07692307692307693
+coverage,w18,2024-02 to 2024-05,18,single_window_specific,,,0.08333333333333333
+coverage,w19,2024-03 to 2024-06,19,single_window_specific,,,0.09090909090909091
+coverage,w20,2024-04 to 2024-07,20,single_window_specific,,,0.0625
+coverage,w21,2024-05 to 2024-08,21,single_window_specific,,,0.047619047619047616
+coverage,w22,2024-06 to 2024-09,22,single_window_specific,,,0.05263157894736842
+coverage,w23,2024-07 to 2024-10,23,single_window_specific,,,0.047619047619047616
+coverage,w24,2024-08 to 2024-11,24,single_window_specific,,,0.07142857142857142
+coverage,w25,2024-09 to 2024-12,25,single_window_specific,,,0.1
+coverage,w26,2024-10 to 2025-01,26,single_window_specific,,,0.08333333333333333
+coverage,w27,2024-11 to 2025-02,27,single_window_specific,,,0.09090909090909091
+coverage,w28,2024-12 to 2025-03,28,single_window_specific,,,0.0625
+coverage,w29,2025-01 to 2025-04,29,single_window_specific,,,0.045454545454545456
+coverage,w30,2025-02 to 2025-05,30,single_window_specific,,,0.05
+coverage,w31,2025-03 to 2025-06,31,single_window_specific,,,0.038461538461538464
+coverage,w32,2025-04 to 2025-07,32,single_window_specific,,,0.04
+coverage,w33,2025-05 to 2025-08,33,single_window_specific,,,0.05
+coverage,w34,2025-06 to 2025-09,34,single_window_specific,,,0.045454545454545456
+coverage,w35,2025-07 to 2025-10,35,single_window_specific,,,0.058823529411764705
+coverage,w36,2025-08 to 2025-11,36,single_window_specific,,,0.058823529411764705
+coverage,w37,2025-09 to 2025-12,37,single_window_specific,,,0.03571428571428571
+coverage,w38,2025-10 to 2026-01,38,single_window_specific,,,0.02564102564102564
+coverage,w39,2025-11 to 2026-02,39,single_window_specific,,,0.019230769230769232
+coverage,w40,2025-12 to 2026-03,40,single_window_specific,,,0.01818181818181818

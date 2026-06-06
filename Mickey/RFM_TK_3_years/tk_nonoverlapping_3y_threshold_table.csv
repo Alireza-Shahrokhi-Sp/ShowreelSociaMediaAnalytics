@@ -1,0 +1,6 @@
+﻿metric,metric_label,period_label,period_index,threshold_scope,threshold_kind,low_threshold,high_threshold,single_threshold,requested_percentile,approx_percentile_rank
+recency,Recency,,,global,low_high,0.360996,0.738589,,,
+engagement,Engagement,,,global,low_high,6.0,15.0,,,
+gini,Gini,,,global,low_high,0.2,0.6,,,
+coverage,Coverage,2020-2022,1,period_specific,single,,,0.011111,,0.9169862395668847
+coverage,Coverage,2023-2026-03,2,period_specific,single,,,0.004149,,0.8956135945086221

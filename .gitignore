@@ -1,0 +1,29 @@
+/videos
+.env
+.venv/
+yt_scraper_env/
+processing_venv/
+ma_env/
+Data/
+multimodal_dataset/
+multimodal_dataset_fixed/
+Ali/.venv/
+Ali/processing_venv/
+Ali/multimodal_dataset/
+Ali/multimodal_dataset_fixed/
+Ali/Preped_Comments/
+Ali/.env.example
+*.code-workspace
+/Data
+gcp_credentials.json
+Ali/Backup
+Ali/audio_recovery/
+Ali/playwright_downloads/
+Ali/playwright_ig_profile/
+# Heavy derived comment data — exceeds GitHub's 100MB limit (use Git LFS if it must be versioned)
+Ali/Output/Prepared Comments/
+# Common heavy media — never push raw media blobs
+*.mp4
+*.mov
+*.m4a
+*.wav

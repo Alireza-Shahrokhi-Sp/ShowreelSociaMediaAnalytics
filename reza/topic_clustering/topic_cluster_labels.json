@@ -1,0 +1,52 @@
+{
+  "0": {
+    "label": "Personal Vlogs and Creator Updates",
+    "description": "Creators greeting their audience, introducing friends, and sharing personal life updates or travel stories.",
+    "confidence": "high"
+  },
+  "1": {
+    "label": "Home Fitness and Pilates Workouts",
+    "description": "Video tutorials and guided sessions for home workouts, pilates, and muscle strengthening.",
+    "confidence": "high"
+  },
+  "2": {
+    "label": "Food Recipes and Refreshing Drinks",
+    "description": "Cooking guides, recipes, and tutorials for making refreshing summer beverages and unique meals.",
+    "confidence": "high"
+  },
+  "3": {
+    "label": "Home Cleaning and Appliance Maintenance",
+    "description": "Practical tips and guides for deep cleaning home surfaces and maintaining household appliances.",
+    "confidence": "high"
+  },
+  "4": {
+    "label": "Music and Audio Cue Transcriptions",
+    "description": "Automated transcription placeholders indicating background music, applause, and minor ambient sounds.",
+    "confidence": "high"
+  },
+  "5": {
+    "label": "Makeup Tutorials and Beauty Looks",
+    "description": "Step-by-step guides and tutorials for creating different makeup looks, from quick daily routines to bold styles.",
+    "confidence": "high"
+  },
+  "6": {
+    "label": "Cinema, Animation, and Literature Discussions",
+    "description": "Commentary and discussions about filmmaking, animation, comics, and classic horror literature.",
+    "confidence": "medium"
+  },
+  "7": {
+    "label": "Gift Ideas, Unboxings, and Toy Reviews",
+    "description": "Showcases of birthday presents, budget-friendly holiday gift ideas, and unboxings of budget toys.",
+    "confidence": "high"
+  },
+  "8": {
+    "label": "Cosmetics Reviews and Product Recommendations",
+    "description": "Product recommendations, reviews of affordable makeup items, and discussions about beauty industry practices.",
+    "confidence": "high"
+  },
+  "9": {
+    "label": "Entertainment Challenges and Creative Sketches",
+    "description": "Lighthearted entertainment videos featuring absurd challenges, experiments, and playful narrative sketches.",
+    "confidence": "medium"
+  }
+}

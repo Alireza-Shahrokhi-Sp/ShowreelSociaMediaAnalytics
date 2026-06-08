@@ -1,6 +1,6 @@
 {
-  "name": "projects/840606707685/locations/us-central1/batchPredictionJobs/3354994238478614528",
+  "name": "projects/840606707685/locations/us-central1/batchPredictionJobs/6859249946386759680",
   "dest": "gs://afb_showreel/sentiment_batch/output/",
   "state": "JobState.JOB_STATE_PENDING",
-  "submitted_at": "2026-06-05T20:27:35.695072"
+  "submitted_at": "2026-06-07T23:33:48.074484"
 }

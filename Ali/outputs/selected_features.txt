@@ -1,0 +1,26 @@
+# EDIT THIS LIST: Remove or comment out features you don't want in clustering
+SELECTED_NUMERIC_FEATURES = [
+    "total_comments",
+    "unique_posts_commented",
+    "activity_span_days",
+    # "total_replies_made",  # <- REDUNDANT: use reply_ratio instead
+    "reply_ratio",
+    "mean_hours_to_comment",
+    # "median_hours_to_comment",  # <- REDUNDANT: use mean instead
+    "pct_comments_under_1h",
+    # "pct_comments_under_24h",  # <- OPTIONAL: tight subset of 1h signal
+    "mean_word_count",
+    "mean_mention_count",
+    "emoji_usage_rate",
+    "question_rate",
+    "exclamation_rate",
+    "post_concentration_ratio",
+]
+
+# Filter to only columns that exist
+SELECTED_NUMERIC_FEATURES = [c for c in SELECTED_NUMERIC_FEATURES if c in user_features.columns]
+
+print(f"
+✅ Selected {len(SELECTED_NUMERIC_FEATURES)} numeric features:")
+for f in SELECTED_NUMERIC_FEATURES:
+    print(f"   • {f}")

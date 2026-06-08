@@ -22,6 +22,9 @@ Ali/playwright_downloads/
 Ali/playwright_ig_profile/
 # Heavy derived comment data — exceeds GitHub's 100MB limit (use Git LFS if it must be versioned)
 Ali/Output/Prepared Comments/
+Ali/outputs/*.jsonl
+Ali/outputs/*.csv
+Ali/outputs/*.json
 # Common heavy media — never push raw media blobs
 *.mp4
 *.mov

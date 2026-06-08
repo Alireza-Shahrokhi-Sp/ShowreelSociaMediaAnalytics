@@ -1,0 +1,19 @@
+{
+  "customAgents": {
+    "db_architect": {
+      "model": "claude-3-opus-20240229",
+      "description": "High-cognitive-load architectural planning. Designs normalized schemas and Big Data blueprints. No implementation code.",
+      "systemPromptFile": ".prompts/architect.md"
+    },
+    "pipeline_coder": {
+      "model": "claude-3-5-sonnet-20240620",
+      "description": "Execution layer. Translates blueprints into optimized, asynchronous Python/PySpark scripts.",
+      "systemPromptFile": ".prompts/coder.md"
+    },
+    "query_reviewer": {
+      "model": "claude-3-haiku-20240307",
+      "description": "Validation layer. Acts as a strict syntax linter and unit-test validator.",
+      "systemPromptFile": ".prompts/reviewer.md"
+    }
+  }
+}

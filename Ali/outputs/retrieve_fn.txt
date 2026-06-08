@@ -1,0 +1,40 @@
+=== id=infra ===
+import json, os, time, datetime, re
+from google.cloud import storage
+
+def strip_fences(s: str) -> str:
+    s = s.strip()
+    s = re.sub(r"^```(?:json)?\s*", "", s)
+    s = re.sub(r"\s*```$", "", s)
+    return s.strip()
+
+def write_jsonl(lines: list, path: str) -> str:
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        for obj in lines:
+            f.write(json.dumps(obj, ensure_ascii=False) + "\n")
+    print(f"[prep] wrote {len(lines):,} requests -> {path}")
+    return path
+
+def upload_to_gcs(local_path: str, bucket_name: str, blob_name: str) -> str:
+    c = storage.Client(project=GCP_PROJECT_ID)
+    c.bucket(bucket_name).blob(blob_name).upload_from_filename(local_path)
+    uri = f"gs://{bucket_name}/{blob_name}"
+    print(f"[upload] {local_path} -> {uri}")
+    return uri
+
+def submit_batch_job(input_uri: str, output_uri: str, model: str):
+    """Non-blocking submit. dest is a PREFIX; Vertex writes a unique run subfolder under it."""
+    job = client.batches.create(
+        model=model, src=input_uri,
+        config=CreateBatchJobConfig(dest=output_uri),
+    )
+    print(f"[submit] {model} -> {job.name}  ({job.state})")
+    return job
+
+def poll_until_complete(job_name: str):
+    terminal = {JobState.JOB_STATE_SUCCEEDED, JobState.JOB_STATE_FAILED,
+                JobState.JOB_STATE_CANCELLED, JobState.JOB_STATE_PAUSED}
+    while True:
+        job = client.batches.get(name=job_name)
+        print(f"[poll {datetime.

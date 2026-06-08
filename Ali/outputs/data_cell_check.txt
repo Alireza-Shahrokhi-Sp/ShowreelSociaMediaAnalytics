@@ -1,0 +1,8 @@
+cell 8 id=data, length=1996
+import pandas as pd
+
+print(f"Loading prepared comments for platform = {PLATFORM!r}")
+
+# 1) Comment feature matrix — predicate-pushdown filter to PLATFORM (skips other platforms).
+comments = pd.read_parquet(COMMENTS_ML_PATH, filters=[("platform", "==", PLATFORM)])
+comments["author_id"] = comments["au

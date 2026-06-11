@@ -1,0 +1,64 @@
+from google.genai import types
+
+def llm_consolidate_taxonomy(path=TAXONOMY_JSON_PATH, target_personas=TARGET_PERSONAS,
+                             model=MODEL_STAGE2_CLASSIFY, write=True):
+    """One-shot LLM consolidation: feed every raw candidate to Gemini and get a clean MECE taxonomy."""
+    data = json.load(open(path, encoding="utf-8"))
+    raw = [c for c in data.get("raw_candidates", []) if isinstance(c, dict) and c.get("codename")]
+    if not raw:
+        print("No raw_candidates — run/retrieve Stage 1 first.")
+        return []
+
+    items = [{"codename": c.get("codename", ""),
+              "description": str(c.get("description", ""))[:220],
+              "signals": (c.get("signals") or [])[:3],
+              "examples": (c.get("examples") or [])[:2]} for c in raw]
+
+    system = (
+        f"You are consolidating {len(items)} NOISY candidate audience-persona archetypes — discovered "
+        "batch-by-batch from an Italian Instagram influencer's comment community, with many near-duplicate "
+        "names and heavy semantic overlap — into ONE clean, MECE taxonomy.\n"
+        f"Merge synonyms and overlapping archetypes into AT MOST {target_personas} distinct, non-overlapping "
+        "personas that together cover the candidates. Order them by how common/important the archetype is.\n"
+        "For each final persona output: codename (UPPER_SNAKE_CASE), label (short Title Case), "
+        "description (1-2 sentences), quantitative_signals (3-5 distinguishing behavioural signals), "
+        "example_comments (2-3 verbatim fragments drawn from the candidates).\n"
+        "Output ONLY a valid JSON array of objects with exactly those 5 keys. No preamble, no markdown fences."
+    )
+    prompt = system + "\n\n=== CANDIDATES ===\n" + json.dumps(items, ensure_ascii=False)
+
+    cfg = types.GenerateContentConfig(
+        temperature=0.0, top_p=1.0, max_output_tokens=8192,
+        response_mime_type="application/json",
+        thinking_config=types.ThinkingConfig(thinking_budget=4096),   # hard reasoning task — give it room
+    )
+    print(f"Consolidating {len(items)} candidates -> <= {target_personas} personas via {model} …")
+    resp = client.models.generate_content(model=model, contents=prompt, config=cfg)
+
+    text = strip_fences(resp.text or "")
+    try:
+        final = json.loads(text)
+    except Exception as e:
+        print("⚠️  Could not parse LLM output:", str(e)[:120], "\n", text[:400])
+        return []
+    if not isinstance(final, list):
+        print("⚠️  Expected a JSON array, got", type(final).__name__)
+        return []
+
+    keys = ["codename", "label", "description", "quantitative_signals", "example_comments"]
+    final = [{k: p.get(k, "" if k in ("codename", "label", "description") else []) for k in keys}
+             for p in final if isinstance(p, dict)]
+
+    print(f"✅ {len(final)} consolidated personas:")
+    for p in final:
+        print(f"  {str(p['codename']):<28} | {p['label']}")
+    if write:
+        data["final_taxonomy"] = final
+        data["pathway"] = "A_LLM"
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"\n✏️  Written to {path} -> final_taxonomy. Review/tweak, then set status='APPROVED'.")
+    return final
+
+# Uncomment to run (one online Gemini call):
+_final = llm_consolidate_taxonomy(target_personas=TARGET_PERSONAS)

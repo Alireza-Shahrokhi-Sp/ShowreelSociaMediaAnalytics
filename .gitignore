@@ -25,6 +25,9 @@ Ali/Output/Prepared Comments/
 Ali/outputs/*.jsonl
 Ali/outputs/*.csv
 Ali/outputs/*.json
+Ali/outputs/*.parquet
+Ali/llm_wiki_afb
+Ali/Claude.md
 # Common heavy media — never push raw media blobs
 *.mp4
 *.mov

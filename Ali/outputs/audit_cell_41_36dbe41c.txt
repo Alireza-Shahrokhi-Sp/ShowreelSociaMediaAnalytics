@@ -1,0 +1,115 @@
+def build_stage2_system_prompt(taxonomy: list) -> str:
+    taxonomy_text = ""
+    for p in taxonomy:
+        taxonomy_text += (
+            f"\nPERSONA: {p['codename']} — {p.get('label', '')}\n"
+            f"  Description: {p.get('description', '')}\n"
+            f"  Quantitative signals: {'; '.join(p.get('quantitative_signals', []))}\n"
+            f"  Example comments: {' | '.join(p.get('example_comments', []))}\n"
+        )
+    return (
+        "You are a deterministic community analyst for Show Reel Media Group.\n"
+        "Classify the Instagram commenter into exactly ONE persona from the approved taxonomy,\n"
+        "using their behavioural metrics, comment samples, AND the attached post media (images /\n"
+        "video frames + transcript) of the content they engage with most.\n\n"
+        "=== APPROVED PERSONA TAXONOMY ===\n"
+        f"{taxonomy_text}"
+        "=================================\n\n"
+        "RULES:\n"
+        "1. Assign exactly ONE persona — the closest match.\n"
+        "2. Output a confidence score between 0.0 and 1.0.\n"
+        "3. Cite a specific comment fragment or media detail as justification.\n"
+        "4. If data is insufficient, assign the most probable persona with confidence <= 0.4.\n"
+        "5. Echo the author_id exactly as given.\n"
+        "6. Output ONLY a single valid JSON object. No preamble, no markdown fences.\n\n"
+        'Schema: {"author_id": str, "persona_codename": str, "confidence": float, "justification": str}'
+    )
+
+def format_user_profile_for_stage2(row) -> dict:
+    return {
+        "author_id":                str(row["author_id"]),
+        "total_comments":           int(row["total_comments"]),
+        "unique_posts":             int(row["unique_posts_commented"]),
+        "activity_span_days":       int(row["activity_span_days"]),
+        "pct_comments_under_1h":    round(float(row["pct_comments_under_1h"]), 2),
+        "pct_comments_under_24h":   round(float(row["pct_comments_under_24h"]), 2),
+        "reply_ratio":              round(float(row["reply_ratio"]), 2),
+        "mean_mention_count":       round(float(row["mean_mention_count"]), 2),
+        "mean_word_count":          round(float(row["mean_word_count"]), 1),
+        "emoji_usage_rate":         round(float(row["emoji_usage_rate"]), 2),
+        "question_rate":            round(float(row["question_rate"]), 2),
+        "exclamation_rate":         round(float(row["exclamation_rate"]), 2),
+        "post_concentration_ratio": round(float(row["post_concentration_ratio"]), 2),
+        "sample_comments":          str(row.get("top_comments_sample", ""))[:500],
+    }
+
+def build_stage2_line(row, system_prompt: str) -> dict:
+    profile = json.dumps(format_user_profile_for_stage2(row), ensure_ascii=False)
+    parts = [{"text": system_prompt + "\n\n=== USER TO CLASSIFY ===\n" + profile +
+              "\n\nThe images/frames and transcripts below are sample posts this user engaged with most."}]
+    parts.extend(build_user_media_parts(row["author_id"]))
+    parts.append({"text": "\nClassify THIS user into exactly one persona. Output ONLY one JSON object."})
+    return {"request": {"contents": [{"role": "user", "parts": parts}],
+                        "generationConfig": gen_config_dict(MAX_OUTPUT_TOKENS_STAGE2, THINKING_BUDGET_STAGE2)}}
+
+# ── SUBMIT (returns immediately — safe to close the laptop) ────────────────────
+def submit_stage2(user_features_df, taxonomy, max_users=STAGE2_MAX_USERS):
+    df = user_features_df if max_users is None else user_features_df.head(max_users)
+    print(f"\n{'='*60}\nSTAGE 2 (batch submit) — Classification\n"
+          f"  Users: {len(df):,} (1/request) | Model: {MODEL_STAGE2_CLASSIFY}\n{'='*60}")
+    system_prompt = build_stage2_system_prompt(taxonomy)
+    lines = [build_stage2_line(row, system_prompt)
+             for _, row in tqdm(df.iterrows(), total=len(df), desc="Build Stage 2 requests")]
+    in_uri  = upload_to_gcs(write_jsonl(lines, f"{LOCAL_DIR}/stage2_input.jsonl"),
+                            GCS_BUCKET, BATCH_INPUT_PREFIX + "stage2_input.jsonl")
+    out_uri = f"gs://{GCS_BUCKET}/{BATCH_OUTPUT_PREFIX}stage2/"
+    job = submit_batch_job(in_uri, out_uri, MODEL_STAGE2_CLASSIFY)
+    record_batch_job("stage2", job, out_uri)
+    print(f"\n\U0001f4e4 Stage 2 submitted ({len(lines)} requests). Safe to close the laptop.")
+    print("   When it finishes, run:  retrieve_stage2()   -> writes user_personas.parquet")
+    return job
+
+# ── RETRIEVE (run later; rebuilds the per-user join from user_features) ────────
+def retrieve_stage2(user_features_df=None, max_users=STAGE2_MAX_USERS, output_path=RESULTS_PATH):
+    job = get_recorded_job("stage2")
+    if job.state != JobState.JOB_STATE_SUCCEEDED:
+        print(f"⏳ Stage 2 not ready (state={job.state}). Re-run later.")
+        return None
+    if user_features_df is None:
+        user_features_df = user_features
+    df = user_features_df if max_users is None else user_features_df.head(max_users)
+
+    results = []
+    for t in retrieve_response_texts(job, GCS_BUCKET):
+        if not t:
+            continue
+        try:
+            obj = json.loads(strip_fences(t))
+            if isinstance(obj, list):
+                results.extend(obj)
+            elif isinstance(obj, dict):
+                results.append(obj)
+        except Exception as e:
+            print("   parse error:", str(e)[:80])
+
+    results_df = pd.DataFrame(results)
+    if "author_id" in results_df.columns:
+        results_df["author_id"] = results_df["author_id"].astype(str)
+    summary_cols = ["author_id", "total_comments", "activity_span_days",
+                    "mean_hours_to_comment", "pct_comments_under_1h",
+                    "reply_ratio", "mean_word_count"]
+    base = df.copy()
+    base["author_id"] = base["author_id"].astype(str)
+    final_df = base[summary_cols].merge(results_df, on="author_id", how="left")
+    final_df.to_parquet(output_path, index=False)
+
+    matched = final_df["persona_codename"].notna().sum() if "persona_codename" in final_df.columns else 0
+    print(f"\n✅ Stage 2 complete. Classified {matched:,}/{len(final_df):,} users -> {output_path}")
+    if "persona_codename" in final_df.columns:
+        dist = final_df["persona_codename"].value_counts(normalize=True).mul(100).round(1)
+        print("\n   Persona Distribution:")
+        for persona, pct in dist.items():
+            print(f"      {str(persona):<35} {pct:.1f}%")
+    return final_df
+
+print("✅ Stage 2 functions ready (submit_stage2 / retrieve_stage2).")

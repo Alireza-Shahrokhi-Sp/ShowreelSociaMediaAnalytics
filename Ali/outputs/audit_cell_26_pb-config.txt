@@ -1,0 +1,15 @@
+# Pathway B config — UMAP + HDBSCAN knobs (tuned for the smaller Stage-1 sample).
+# Names match the legacy Stage 3 config; harmless if that block runs later (just re-set).
+UMAP_N_NEIGHBORS          = 30
+UMAP_MIN_DIST             = 0.0
+UMAP_N_COMPONENTS_CLUSTER = 15
+UMAP_METRIC               = "euclidean"
+UMAP_RANDOM_STATE         = 42
+
+HDBSCAN_MIN_SAMPLES       = 10
+HDBSCAN_CLUSTER_SELECTION = "eom"
+HDBSCAN_CLUSTER_EPSILON   = 0.0
+
+MODEL_STAGE3_NAMING          = "gemini-2.5-flash"
+MAX_SAMPLE_USERS_PER_CLUSTER = 30
+print("Pathway B config loaded (target ~", PATHWAY_B_TARGET_CLUSTERS, "clusters).")

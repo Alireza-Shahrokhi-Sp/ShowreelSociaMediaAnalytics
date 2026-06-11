@@ -1,0 +1,56 @@
+
+def build_cluster_summary(cluster_id: int, df: pd.DataFrame) -> dict:
+    sub = df[df["macro_cluster"] == cluster_id].copy()
+    n   = len(sub)
+
+    # Micro-persona composition
+    persona_dist = (
+        sub["persona_codename"].value_counts(normalize=True)
+                               .mul(100).round(1)
+                               .head(5).to_dict()
+    )
+
+    # Mean behavioral stats
+    stat_cols = [c for c in [
+        "total_comments", "activity_span_days", "mean_hours_to_comment",
+        "pct_comments_under_1h", "reply_ratio", "mean_word_count",
+        "emoji_usage_rate", "question_rate", "exclamation_rate",
+    ] if c in sub.columns]
+    mean_stats = sub[stat_cols].mean().round(3).to_dict()
+
+    # Representative comment samples from top_comments_sample
+    samples = []
+    if "top_comments_sample" in sub.columns:
+        sample_rows = sub["top_comments_sample"].dropna().sample(
+            n=min(MAX_SAMPLE_USERS_PER_CLUSTER, n), random_state=42
+        )
+        for txt in sample_rows:
+            frags = [f.strip() for f in str(txt).split("|||") if f.strip()]
+            samples.extend(frags[:2])
+            if len(samples) >= 30:
+                break
+    samples = samples[:30]
+
+    # Stage 2 justification snippets
+    justifications = []
+    if "justification" in sub.columns:
+        for j in sub["justification"].dropna().sample(n=min(10, n), random_state=42):
+            justifications.append(str(j)[:200])
+
+    return {
+        "cluster_id":              cluster_id,
+        "n_users":                 n,
+        "pct_audience":            round(100 * n / max(len(df[df["macro_cluster"] >= 0]), 1), 1),
+        "dominant_micro_personas": persona_dist,
+        "mean_behavioral_stats":   mean_stats,
+        "sample_comments":         samples,
+        "sample_justifications":   justifications[:10],
+    }
+
+
+cluster_summaries = [build_cluster_summary(c, stage3_df) for c in unique_clusters]
+print(f"✅ Cluster summaries built for {len(cluster_summaries)} clusters:\n")
+for s in cluster_summaries:
+    top_p = list(s["dominant_micro_personas"].items())[:3]
+    print(f"  Cluster {s['cluster_id']:>3}  n={s['n_users']:>7,}  ({s['pct_audience']:.1f}%)"
+          f"  top micro-personas: {top_p}")

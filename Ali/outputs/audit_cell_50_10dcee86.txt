@@ -1,0 +1,9 @@
+# Status check (no retrieval) — see whether each submitted job is done yet.
+for _tag in ("stage1", "stage2"):
+    if os.path.exists(f"{LOCAL_DIR}/{_tag}_job.json"):
+        try:
+            get_recorded_job(_tag)
+        except Exception as _e:
+            print(_tag, "->", str(_e)[:120])
+    else:
+        print(f"{_tag}: not submitted yet.")

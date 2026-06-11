@@ -1,0 +1,13 @@
+emotion,neg_share_%,overall_share_%,lift
+sadness,39.73,3.13,12.69
+disgust,27.34,1.55,17.64
+anger,18.31,1.12,16.35
+fear,5.3,0.32,16.56
+amusement,3.33,11.28,0.3
+surprise,2.57,3.09,0.83
+disappointment,0.77,0.05,15.4
+disapproval,0.52,0.03,17.33
+frustration,0.49,0.03,16.33
+disagreement,0.49,0.03,16.33
+annoyance,0.27,0.02,13.5
+anticipation,0.24,6.35,0.04

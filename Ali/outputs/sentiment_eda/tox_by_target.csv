@@ -1,0 +1,11 @@
+target,comments,toxic,severe,negative,toxic_rate_%,negative_rate_%
+off_topic,4039,187,135,1059,4.63,26.22
+other,4836,127,6,1802,2.63,37.26
+other_user,89746,1235,131,6447,1.38,7.18
+none,6872,58,48,352,0.84,5.12
+creator,156290,729,134,4735,0.47,3.03
+content_work,157091,616,54,10777,0.39,6.86
+appearance,63939,244,14,1180,0.38,1.85
+product,14793,30,1,1497,0.2,10.12
+caption,103,0,0,3,0.0,2.91
+location,57,0,0,0,0.0,0.0

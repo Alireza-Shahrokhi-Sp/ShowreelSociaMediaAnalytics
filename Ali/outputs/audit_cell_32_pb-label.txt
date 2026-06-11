@@ -1,0 +1,77 @@
+# LLM-label each cluster into the SAME 5-key persona schema, then write final_taxonomy.
+from google.genai import types
+
+PB_NAMING_SYSTEM = (
+    "You are a strategic audience analyst for an Italian Instagram influencer agency.\n"
+    "Commenters were clustered into behavioural macro-segments (UMAP + HDBSCAN). Each cluster is\n"
+    "described by mean behavioural stats, a dominant room-vibe mix, and representative comments.\n"
+    "Turn EACH cluster into ONE audience persona. Personas must be MUTUALLY EXCLUSIVE.\n"
+    f"Return AT MOST {TARGET_PERSONAS} personas (one per cluster), ordered by audience share.\n"
+    "For each persona output exactly these 5 keys: codename (UPPER_SNAKE_CASE), label (short Title Case),\n"
+    "description (1-2 sentences), quantitative_signals (3-5 distinguishing behavioural signals as strings),\n"
+    "example_comments (2-3 verbatim fragments drawn from the cluster's sample comments).\n"
+    "Output ONLY a valid JSON array of objects with exactly those 5 keys. No preamble, no markdown fences."
+)
+
+def _pb_block(s):
+    stats = "  ".join(f"{k}={v:.2f}" if isinstance(v, float) else f"{k}={v}"
+                      for k, v in list(s["mean_behavioral_stats"].items())[:7])
+    vibe = "  ".join(f"{k}: {v}%" for k, v in s["dominant_room_vibe_mix"].items())
+    comments = "\n    - ".join(s["sample_comments"][:8])
+    return (f"CLUSTER {s['cluster_id']}  (n={s['n_users']:,}, {s['pct_audience']}% of clustered users)\n"
+            f"  Mean behavioural stats: {stats}\n"
+            f"  Dominant room-vibe mix: {vibe}\n"
+            f"  Sample comments:\n    - {comments}")
+
+pb_prompt = PB_NAMING_SYSTEM + "\n\n=== CLUSTER DATA ===\n\n" + "\n\n".join(
+    _pb_block(s) for s in pb_cluster_summaries)
+
+pb_cfg = types.GenerateContentConfig(
+    temperature=0.0, top_p=1.0, max_output_tokens=8192,
+    response_mime_type="application/json",
+    thinking_config=types.ThinkingConfig(thinking_budget=4096),
+)
+print(f"Labelling {len(pb_cluster_summaries)} clusters via {MODEL_STAGE3_NAMING} ...")
+pb_resp = client.models.generate_content(model=MODEL_STAGE3_NAMING, contents=pb_prompt, config=pb_cfg)
+
+_pb_text = strip_fences(pb_resp.text or "")
+try:
+    pb_macro_personas = json.loads(_pb_text)
+except Exception as e:
+    print("⚠️  Could not parse LLM output:", str(e)[:120], "\n", _pb_text[:400])
+    pb_macro_personas = []
+
+_keys = ["codename", "label", "description", "quantitative_signals", "example_comments"]
+pb_macro_personas = [{k: p.get(k, "" if k in ("codename", "label", "description") else []) for k in _keys}
+                     for p in pb_macro_personas if isinstance(p, dict)][:TARGET_PERSONAS]
+
+print(f"✅ {len(pb_macro_personas)} personas from Pathway B:")
+for p in pb_macro_personas:
+    print(f"   {str(p['codename']):<28} | {p['label']}")
+
+# Write taxonomy.json (same contract as Pathway A) + provenance + cluster maps.
+import os
+if os.path.exists(TAXONOMY_JSON_PATH):
+    data = json.load(open(TAXONOMY_JSON_PATH, encoding="utf-8"))
+else:
+    data = {"status": "PENDING_HUMAN_REVIEW", "raw_candidates": []}
+data["final_taxonomy"] = pb_macro_personas
+data["status"] = "PENDING_HUMAN_REVIEW"
+data["pathway"] = "B_CLUSTER"
+data["instructions"] = ("Pathway B (UMAP+HDBSCAN) taxonomy. Review/merge, ensure MECE, "
+                        "set status='APPROVED' before Stage 2. Set CONSOLIDATION_PATHWAY='B_CLUSTER' "
+                        "so the Pathway A wrapper cell does not overwrite this.")
+with open(TAXONOMY_JSON_PATH, "w", encoding="utf-8") as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+print(f"✏️  Written -> {TAXONOMY_JSON_PATH} (pathway=B_CLUSTER). "
+      "Set CONSOLIDATION_PATHWAY='B_CLUSTER' and status='APPROVED' before Stage 2.")
+
+# cluster_id -> persona codename map (LLM array is ordered by pb_unique_clusters)
+_cluster_map = {int(cid): pb_macro_personas[i]["codename"]
+                for i, cid in enumerate(pb_unique_clusters) if i < len(pb_macro_personas)}
+with open(CLUSTER_PERSONA_MAP_PATH, "w", encoding="utf-8") as f:
+    json.dump(_cluster_map, f, ensure_ascii=False, indent=2)
+pb_df[["author_id", "macro_cluster"]].to_parquet(
+    f"{LOCAL_DIR}/pathway_b_assignments_{PLATFORM}.parquet", index=False)
+print(f"✅ Cluster->persona map -> {CLUSTER_PERSONA_MAP_PATH}; "
+      f"assignments -> pathway_b_assignments_{PLATFORM}.parquet")

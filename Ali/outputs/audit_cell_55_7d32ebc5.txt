@@ -1,0 +1,10 @@
+def upload_outputs_to_gcs(local_dir="outputs/"):
+    from google.cloud import storage
+    client = storage.Client(project=GCP_PROJECT_ID)
+    bucket = client.bucket(GCS_BUCKET)
+    for fname in os.listdir(local_dir):
+        local_path = os.path.join(local_dir, fname)
+        bucket.blob(fname).upload_from_filename(local_path)
+        print(f"   Uploaded: {local_path} -> gs://{GCS_BUCKET}/{fname}")
+
+# upload_outputs_to_gcs()

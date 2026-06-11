@@ -1,0 +1,14 @@
+import json
+
+if CONSOLIDATION_PATHWAY == "A_LLM" and "_final" in dir():
+    taxonomy_wrapper = {
+        "status": "PENDING_HUMAN_REVIEW",
+        "pathway": "A_LLM",
+        "instructions": "Consolidate the candidates into a MECE taxonomy. Each final persona needs a unique 'codename' (plus 'label', 'description', 'quantitative_signals', 'example_comments'). Set status='APPROVED' before Stage 2.",
+        "final_taxonomy": _final
+    }
+    with open(f"{LOCAL_DIR}/taxonomy.json", 'w', encoding="utf-8") as f:
+        json.dump(taxonomy_wrapper, f, ensure_ascii=False, indent=2)
+    print(f"✅ Saved {len(_final)} personas to {LOCAL_DIR}/taxonomy.json")
+else:
+    print("Skipping Pathway A wrapper (Pathway B taxonomy already written, or _final absent).")

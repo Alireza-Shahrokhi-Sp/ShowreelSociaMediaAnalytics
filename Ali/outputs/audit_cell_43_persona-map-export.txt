@@ -1,0 +1,19 @@
+def export_persona_map(results_path=RESULTS_PATH, out_path=PERSONA_MAP_PATH):
+    """author_id -> persona_codename(, confidence), one row per author, for downstream joins."""
+    import os, pandas as pd
+    if not os.path.exists(results_path):
+        raise FileNotFoundError(f"{results_path} missing — run retrieve_stage2() first.")
+    df = pd.read_parquet(results_path)
+    df["author_id"] = df["author_id"].astype(str)
+    cols = ["author_id", "persona_codename"] + (["confidence"] if "confidence" in df.columns else [])
+    pmap = (df[cols].dropna(subset=["persona_codename"])
+                    .drop_duplicates("author_id").reset_index(drop=True))
+    pmap.to_parquet(out_path, index=False)
+    print(f"✅ Persona map: {len(pmap):,} authors -> {out_path}")
+    print("   Attach downstream via:")
+    print("     ig_comments_clean = ig_comments_clean.merge("
+          "pd.read_parquet(PERSONA_MAP_PATH), on='author_id', how='left')")
+    return pmap
+
+# Run after retrieve_stage2():
+# persona_map = export_persona_map()

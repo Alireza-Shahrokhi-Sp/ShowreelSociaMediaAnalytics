@@ -1,0 +1,29 @@
+# HDBSCAN auto-tuned toward PATHWAY_B_TARGET_CLUSTERS (soft <= 12).
+import hdbscan, numpy as np
+
+def cluster_near_target(emb, target=PATHWAY_B_TARGET_CLUSTERS):
+    best = None
+    for frac in (0.005, 0.01, 0.02, 0.03, 0.05, 0.08):
+        mcs = max(5, int(len(emb) * frac))
+        lab = hdbscan.HDBSCAN(
+            min_cluster_size=mcs,
+            min_samples=HDBSCAN_MIN_SAMPLES,
+            cluster_selection_method=HDBSCAN_CLUSTER_SELECTION,
+            cluster_selection_epsilon=HDBSCAN_CLUSTER_EPSILON,
+        ).fit_predict(emb)
+        k = len(set(lab[lab >= 0]))
+        if best is None or abs(k - target) < abs(best[1] - target):
+            best = (mcs, k, lab)
+        if k <= target:
+            break
+    return best
+
+pb_mcs, pb_k, pb_labels = cluster_near_target(X_umap_cluster)
+pb_df["macro_cluster"] = pb_labels
+pb_unique_clusters = sorted(set(pb_labels[pb_labels >= 0]))
+pb_n_noise = int((pb_labels == -1).sum())
+print(f"✅ Pathway B: min_cluster_size={pb_mcs} -> {pb_k} clusters | "
+      f"noise={pb_n_noise:,} ({100*pb_n_noise/len(pb_labels):.1f}%)")
+for c in pb_unique_clusters:
+    cnt = int((pb_labels == c).sum())
+    print(f"   Cluster {c:>2}: {cnt:>6,} users ({100*cnt/len(pb_labels):.1f}%)")

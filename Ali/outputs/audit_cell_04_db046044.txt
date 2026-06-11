@@ -1,0 +1,31 @@
+import os
+
+# ============================ PLATFORM TOGGLE ============================
+# Run the whole persona pipeline against a different platform by changing this.
+# Comments come from the multi-platform prepared exports and are filtered to PLATFORM.
+PLATFORM = "instagram"        # instagram | youtube | tiktok | facebook
+# ========================================================================
+
+# GCP / Vertex AI
+GCP_PROJECT_ID = "project-a9b99a62-b082-46aa-b54"
+GCP_LOCATION   = "europe-west1"
+
+# --- GCS bucket (used by Vertex Batch: media URIs, JSONL upload/retrieve) -----
+GCS_BUCKET = "afb_project2"
+
+# --- Local paths to outputs folder (comments_ml, media_index, job artefacts) -----
+OUTPUT_DIR = "outputs/"
+
+# --- Prepared comments (ALL platforms; filtered to PLATFORM at load) -----------
+# comments_ml      : numeric features + bare-numeric author_id/media_id + comment_id (ig_comment_<n>)
+# edges_replies_to : reply structure (src --replies to--> dst), joined on comment_id
+# comments_llm     : raw text keyed by comment_id (no author_id -> join via comment_id)
+COMMENTS_ML_PATH   = f"{OUTPUT_DIR}comments_ml.parquet"
+COMMENTS_LLM_PATH  = f"{OUTPUT_DIR}comments_llm.jsonl"
+EDGES_REPLIES_PATH = f"{OUTPUT_DIR}edges_replies_to.parquet"
+
+# --- Multimodal context (Instagram only): post metadata + media on GCS ---------
+# ig_multimodal_final bridges media_id <-> shortcode and carries post metadata
+# (tagged users, music, caption); media objects live under MEDIA_GCS_PREFIX.
+MEDIA_INDEX_PATH = f"{OUTPUT_DIR}ig_multimodal_final.parquet"
+MEDIA_GCS_PREFIX = "multimodal_dataset_fixed/"     # gs://bucket/<prefix>/<form>/<shortcode>/...

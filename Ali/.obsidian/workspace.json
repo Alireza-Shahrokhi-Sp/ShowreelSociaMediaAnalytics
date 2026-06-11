@@ -1,0 +1,227 @@
+{
+  "main": {
+    "id": "2ae159167b5853cc",
+    "type": "split",
+    "children": [
+      {
+        "id": "dfa96ab3bac27934",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fd9c97460c2dc8c2",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9c2ce892404abea3",
+    "type": "split",
+    "children": [
+      {
+        "id": "50c124a7f929a92d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "28babd16d0485966",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0afff9c7efd4559a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b8ecf4cc02aeea8f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "53949d25a9a4651d",
+    "type": "split",
+    "children": [
+      {
+        "id": "c29a1facfd564e90",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "788037b8dde92140",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "73591f14d38b3ceb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "67fa7d4bacc0cfbc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "9fdd912ee0990a7a",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "41fc4665cac60334",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "fd9c97460c2dc8c2",
+  "lastOpenFiles": [
+    "outputs/ig_multimodal_final.parquet",
+    "outputs/comments_llm.jsonl",
+    "outputs/comments_ml.parquet",
+    "outputs/figs/01_crossval.png",
+    "Sentiment_EDA.ipynb.tmp.37980.1d016c1611e0",
+    "Sentiment_EDA.ipynb.tmp.37980.916c7d7d7bca",
+    "Sentiment_EDA.ipynb.tmp.37980.8c9b3c06c589",
+    "Sentiment_EDA.ipynb.tmp.37980.82f03173ed76",
+    "outputs/figs/room_vibe_overview.png",
+    "outputs/figs/sentiment_overview.png",
+    "Sentiment_EDA.ipynb.tmp.37980.1391b39622f4",
+    "Sentiment_EDA.ipynb",
+    "outputs/sentiment_eda/figs/03_toxicity_focus.png",
+    "outputs/sentiment_eda/figs/02_timeseries.png",
+    "outputs/sentiment_eda/figs/01_overview.png",
+    "outputs/sentiment_eda/toxic_authors.csv",
+    "outputs/sentiment_eda/neg_emotion_mix.csv",
+    "outputs/figs/persona_negative_heatmap.png",
+    "outputs/figs/persona_sentiment_mix.png",
+    "outputs/figs/persona_negative_users.png",
+    "persona/README.md",
+    "llm_wiki_afb/concepts/ig-private-api-refetch.md",
+    "llm_wiki_afb/sources/notebooks.md",
+    "processing_venv/Lib/site-packages/numpy/random/LICENSE.md",
+    "processing_venv/Lib/site-packages/huggingface_hub/templates/modelcard_template.md",
+    "llm_wiki_afb/concepts/calculated-quantities.md",
+    "llm_wiki_afb/index.md",
+    "llm_wiki_afb/overview.md",
+    "llm_wiki_afb/concepts/vertex-batch-inference.md",
+    "llm_wiki_afb/concepts/sentiment-response-schema.md",
+    "llm_wiki_afb/concepts/sentiment-pipeline.md",
+    "llm_wiki_afb/concepts/room-vibe-metrics.md",
+    "llm_wiki_afb/concepts/persona-pipeline.md",
+    "llm_wiki_afb/concepts/ig-multimodal-dataset.md",
+    "llm_wiki_afb/concepts/emoji-features.md",
+    "llm_wiki_afb/concepts/data-preparation-pipeline.md",
+    "llm_wiki_afb/concepts/community-vibe-pipeline.md",
+    "llm_wiki_afb/log.md",
+    "llm_wiki_afb/comparisons/llm-vs-computed-vibe.md",
+    "llm_wiki_afb/comparisons/flash-vs-pro.md",
+    "llm_wiki_afb/sources/sentiment-response-schema-doc.md",
+    "llm_wiki_afb/sources/data-preparation-pipeline-reference.md",
+    "llm_wiki_afb/sources/pipeline-quantities.md",
+    "llm_wiki_afb/sources/calculated-quantities.md",
+    "llm_wiki_afb/entities/show-reel-media-group.md"
+  ]
+}

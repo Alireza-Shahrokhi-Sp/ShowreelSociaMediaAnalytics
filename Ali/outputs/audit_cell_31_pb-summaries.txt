@@ -1,0 +1,40 @@
+# Per-cluster summary (behaviour + room-vibe mix + sample comments) for LLM naming.
+def build_cluster_summary_b(cluster_id, df):
+    sub = df[df["macro_cluster"] == cluster_id]
+    n = len(sub)
+    stat_cols = [c for c in [
+        "total_comments", "activity_span_days", "mean_hours_to_comment",
+        "pct_comments_under_1h", "reply_ratio", "mean_word_count",
+        "emoji_usage_rate", "question_rate", "exclamation_rate",
+    ] if c in sub.columns]
+    mean_stats = sub[stat_cols].mean().round(3).to_dict()
+
+    vibe_mix = {}
+    if "dominant_room_vibe" in sub.columns:
+        vibe_mix = (sub["dominant_room_vibe"].value_counts(normalize=True)
+                    .mul(100).round(1).head(5).to_dict())
+
+    samples = []
+    if "top_comments_sample" in sub.columns:
+        picks = sub["top_comments_sample"].dropna()
+        if len(picks):
+            picks = picks.sample(n=min(MAX_SAMPLE_USERS_PER_CLUSTER, len(picks)), random_state=42)
+        for txt in picks:
+            frags = [f.strip() for f in str(txt).split("|||") if f.strip()]
+            samples.extend(frags[:2])
+            if len(samples) >= 30:
+                break
+    return {
+        "cluster_id": int(cluster_id),
+        "n_users": n,
+        "pct_audience": round(100 * n / max(len(df[df["macro_cluster"] >= 0]), 1), 1),
+        "mean_behavioral_stats": mean_stats,
+        "dominant_room_vibe_mix": vibe_mix,
+        "sample_comments": samples[:30],
+    }
+
+pb_cluster_summaries = [build_cluster_summary_b(c, pb_df) for c in pb_unique_clusters]
+print(f"✅ Built summaries for {len(pb_cluster_summaries)} clusters:")
+for s in pb_cluster_summaries:
+    print(f"   Cluster {s['cluster_id']:>2}  n={s['n_users']:>6,} ({s['pct_audience']:.1f}%)  "
+          f"vibe={list(s['dominant_room_vibe_mix'].items())[:2]}")

@@ -1,0 +1,36 @@
+
+import pandas as pd, numpy as np, os
+
+if not os.path.exists(RESULTS_PATH):
+    raise FileNotFoundError(
+        f"Stage 2 results not found at '{RESULTS_PATH}'. "
+        "Run retrieve_stage2() first."
+    )
+results_df = pd.read_parquet(RESULTS_PATH)
+results_df["author_id"] = results_df["author_id"].astype(str)
+print(f"Stage 2 results : {len(results_df):,} users  |  "
+      f"classified: {results_df['persona_codename'].notna().sum():,}")
+
+# Merge with full behavioral features + comment text from Stage 0 (still in memory)
+extra_cols = [
+    "author_id",
+    "unique_posts_commented", "total_replies_made",
+    "pct_comments_under_24h", "emoji_usage_rate", "question_rate",
+    "exclamation_rate", "mean_mention_count", "post_concentration_ratio",
+    "top_comments_sample",
+]
+available = [c for c in extra_cols if c in user_features.columns]
+feat_ext = user_features[available].copy()
+feat_ext["author_id"] = feat_ext["author_id"].astype(str)
+
+stage3_df = results_df.merge(feat_ext, on="author_id", how="left")
+
+# Keep only successfully classified users
+stage3_df = stage3_df[
+    stage3_df["persona_codename"].notna() &
+    (stage3_df["persona_codename"] != "CLASSIFICATION_ERROR")
+].copy().reset_index(drop=True)
+
+print(f"Stage 3 working set: {len(stage3_df):,} users with valid micro-persona labels")
+print(f"\nMicro-persona distribution:")
+print(stage3_df["persona_codename"].value_counts().to_string())

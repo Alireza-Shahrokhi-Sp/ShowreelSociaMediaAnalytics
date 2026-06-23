@@ -1,0 +1,21 @@
+milestone,announce_date,occurrence_date,gap_days,paired,inverted,inseparable_7d,inseparable_14d,inseparable_28d,announce_date_pre_days,announce_date_feasible,occurrence_date_pre_days,occurrence_date_feasible
+Pink Different FoxLife,2017-11-13,,,False,False,False,False,False,452.0,True,,False
+Nella MIA Cucina Rai2,2019-09-12,2019-09-16,4.0,True,False,True,True,True,1120.0,True,1124.0,True
+TEDxRimini 2019,2019-11-20,2019-12-14,24.0,True,False,False,False,True,1189.0,True,1213.0,True
+Novel Pre-Order,2021-03-09,2021-04-20,42.0,True,False,False,False,False,1664.0,True,1706.0,True
+Tutte le volte Podcast,2022-01-19,,,False,False,False,False,False,1980.0,True,,False
+Solo Tour Launch,2023-07-03,2023-04-15,-79.0,True,True,False,False,False,2510.0,True,2431.0,True
+Avanguardia Pura Tour,2024-06-14,2025-01-12,212.0,True,False,False,False,False,2857.0,True,3069.0,True
+Etna Comics 2025,2025-04-10,2025-04-10,0.0,True,False,True,True,True,3157.0,True,3157.0,True
+The Traitors Italia S2,2025-11-07,2026-06-12,217.0,True,False,False,False,False,3368.0,True,3585.0,True
+Digital Footprint Expansion,,2016-11-01,,False,False,False,False,False,,False,75.0,False
+Rai Radio2 Broadcast,,2017-09-15,,False,False,False,False,False,,False,393.0,True
+National TV Co-Hosting,,2019-09-16,,False,False,False,False,False,,False,1124.0,True
+Macchianera Award,,2019-11-05,,False,False,False,False,False,,False,1174.0,True
+Avanguardia Ticket Sales,,2024-06-19,,False,False,False,False,False,,False,2862.0,True
+Avanguardia Winter Premiere,,2025-01-12,,False,False,False,False,False,,False,3069.0,True
+Media Breakup Confirmation,,2025-02-24,,False,False,False,False,False,,False,3112.0,True
+Autumn Tour Expansion,,2025-03-27,,False,False,False,False,False,,False,3143.0,True
+Autumn Tour Re-ignition,,2025-10-19,,False,False,False,False,False,,False,3349.0,True
+WMF Creators Fest,,2026-06-04,,False,False,False,False,False,,False,3577.0,True
+Traitors Cast Unveiling,,2026-06-12,,False,False,False,False,False,,False,3585.0,True

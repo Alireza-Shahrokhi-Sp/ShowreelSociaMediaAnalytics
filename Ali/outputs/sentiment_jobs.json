@@ -1,0 +1,29 @@
+{
+  "jobs": [
+    {
+      "tag": "sentiment_original",
+      "name": "projects/726524412994/locations/europe-west1/batchPredictionJobs/2287678458647543808",
+      "dest": "gs://afb_project2/sentiment_batch/output/",
+      "must_succeed": false,
+      "note": "FAILED at 24h deadline; partial output (7,854/10,736 reqs) in prediction-model-2026-06-10T17:37:56.149454Z is still consumed"
+    },
+    {
+      "tag": "sentiment_retry0",
+      "name": "projects/726524412994/locations/europe-west1/batchPredictionJobs/7593754448527097856",
+      "dest": "gs://afb_project2/sentiment_batch/output/",
+      "must_succeed": true
+    },
+    {
+      "tag": "sentiment_retry1",
+      "name": "projects/726524412994/locations/europe-west1/batchPredictionJobs/761793813806055424",
+      "dest": "gs://afb_project2/sentiment_batch/output/",
+      "must_succeed": true
+    },
+    {
+      "tag": "sentiment_retry2",
+      "name": "projects/726524412994/locations/europe-west1/batchPredictionJobs/8882346891908481024",
+      "dest": "gs://afb_project2/sentiment_batch/output/",
+      "must_succeed": true
+    }
+  ]
+}

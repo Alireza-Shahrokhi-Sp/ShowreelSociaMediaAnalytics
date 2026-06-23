@@ -2,7 +2,7 @@
 an EXTENDED community-vibe schema — adapted to the HeteroGraph output layout.
 
 The ``Data_Preparation_Pipeline_colab`` notebook (Section 5: "Hybrid
-Heterogeneous Graph Pipeline") writes its results to ``Output/Prepared Comments/``::
+Heterogeneous Graph Pipeline") writes its results to ``outputs/Prepared Comments/``::
 
     comments_llm.jsonl            — raw text per comment   {comment_id, text, platform}
     comments_ml.parquet           — numeric feature matrix  (emoji/punctuation stats)
@@ -79,8 +79,8 @@ COL_DST_COMMENT = "dst_comment_id"
 # --------------------------------------------------------------------------- #
 @dataclass(frozen=True)
 class PrepedConfig:
-    input_dir: str = "Output/Prepared Comments"
-    output_dir: str = "Output/Prepared Comments/by_platform"
+    input_dir: str = "outputs/Prepared Comments"
+    output_dir: str = "outputs/Prepared Comments/by_platform"
     hetero_subdir: str = "HeteroGraph"
     llm_name: str = "comments_llm.jsonl"
     ml_name: str = "comments_ml.parquet"

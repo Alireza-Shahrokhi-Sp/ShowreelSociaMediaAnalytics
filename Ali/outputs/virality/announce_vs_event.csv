@@ -1,0 +1,8 @@
+milestone,ann_excess,ann_lift,ann_pt_sig,ann_peak_day,occ_excess,occ_lift,occ_pt_sig,occ_peak_day,excess_diff,lift_diff,inseparable_14d,gap_days,inverted,wilcoxon_stat,wilcoxon_p_twosided,n_separable_pairs,ann_wins,occ_wins
+Nella MIA Cucina Rai2,3786.3,4.1664,0.0714,3.0,1641.2,2.3237,0.0,0.0,2145.1000000000004,1.8427000000000002,True,4.0,False,,,,,
+TEDxRimini 2019,247.6,1.2186,0.0,12.0,1986.2,3.0048,0.0,5.0,-1738.6000000000001,-1.7862,False,24.0,False,,,,,
+Novel Pre-Order,3819.0,11.1041,0.1429,6.0,1854.2,3.6236,0.0,0.0,1964.8,7.480500000000001,False,42.0,False,,,,,
+Solo Tour Launch,-42.8,0.9519,0.0,1.0,1229.6,3.031,0.0,0.0,-1272.3999999999999,-2.0791000000000004,False,-79.0,True,,,,,
+Avanguardia Pura Tour,1216.9,3.0585,0.0,7.0,213.6,1.9227,0.0,8.0,1003.3000000000001,1.1358,False,212.0,False,,,,,
+Etna Comics 2025,429.4,2.0745,0.0714,4.0,429.4,2.0745,0.0714,4.0,0.0,0.0,True,0.0,False,,,,,
+_AGGREGATE_,5283.5,,,,4054.0,,,,1003.3000000000001,,False,,False,2.0,0.75,3.0,2.0,1.0

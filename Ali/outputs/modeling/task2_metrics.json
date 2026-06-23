@@ -1,0 +1,30 @@
+{
+  "cv_balanced_accuracy_mean": 0.5998039128311844,
+  "cv_macro_f1_mean": 0.4763197642286487,
+  "cv_macro_f1_std": 0.0023170024697081425,
+  "holdout_macro_f1": 0.47284813529186404,
+  "holdout_balanced_acc": 0.6003811462906159,
+  "majority_baseline_macro_f1": 0.3333333333333333,
+  "top20_features": [
+    "word_count",
+    "text_length",
+    "unique_emoji_count",
+    "emoji_count",
+    "emoji_variety_ratio",
+    "emoji_per_word_ratio",
+    "avg_word_length",
+    "mention_count",
+    "question_count",
+    "exclamation_count",
+    "post_hour",
+    "emoji_entropy",
+    "post_dow",
+    "persona_codename_THE_CRITIC",
+    "comment_dow",
+    "comment_hour",
+    "has_numbers",
+    "content_form_reel",
+    "n_hashtags",
+    "media_type_VIDEO"
+  ]
+}

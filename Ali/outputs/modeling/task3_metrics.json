@@ -1,0 +1,19 @@
+{
+  "mean_sentiment_score": {
+    "cv_r2_mean": -0.033958129188430816,
+    "cv_r2_std": 0.05334824551890792
+  },
+  "controversy": {
+    "cv_r2_mean": -0.05435361550499331,
+    "cv_r2_std": 0.1039788363415791
+  },
+  "total_interactions": {
+    "cv_r2_mean": -0.08429094951369083,
+    "cv_r2_std": 0.07819854020940976
+  },
+  "reach": {
+    "cv_r2_mean": -1.1123371116691352,
+    "cv_r2_std": 1.098061841450628
+  },
+  "small_N_warning": "Only 1,493 posts \u2014 R\u00b2 estimates are noisy; interpret coefficients, not R\u00b2"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "projects/726524412994/locations/europe-west1/batchPredictionJobs/3175705621890596864",
+  "dest": "gs://afb_project2/persona_batch/output/stage1_chunk3/",
+  "state": "JobState.JOB_STATE_PENDING",
+  "submitted_at": "2026-06-12T13:38:07.030930"
+}

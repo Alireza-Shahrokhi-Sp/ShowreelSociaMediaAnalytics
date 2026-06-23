@@ -1,0 +1,5 @@
+method,effect_2024_01,p_2024_01,effect_2025_10,p_2025_10
+ATT (post removal),+2.8 pp,,+5.4 pp,
+Permutation test,+2.8 pp (z=0.79),0.143,+5.4 pp (z=2.05),0.020
+DiD (HC0 SE),+2.8 pp (t=4.03),0.0001,+42.4 pp (t=14.90),0.0000
+Synthetic Control,+7.0 pp (RMSPE=1.8x),0.022,+12.1 pp (RMSPE=3.1x),0.000

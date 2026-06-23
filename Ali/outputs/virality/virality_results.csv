@@ -1,0 +1,127 @@
+milestone,intervention_date,post_window,lookback,status,n_pre,model_order,aic,cumulative_excess,peak_excess_log,day_of_peak,relative_lift,point_significance,intervention_type,new_post_coincidence,inseparable_14d,majority_above_pi,strong_lift
+Pink Different FoxLife,2017-11-13,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",607.24,107.0,1.96,0,1.8422,0.0,announcement,True,False,False,True
+Pink Different FoxLife,2017-11-13,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",607.24,301.4,1.96,0,2.2031,0.0,announcement,True,False,False,True
+Pink Different FoxLife,2017-11-13,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",607.24,1609.3,4.1297,14,4.253,0.0357,announcement,True,False,False,True
+Pink Different FoxLife,2017-11-13,7,365,ok,365,"(1, 1, 2)x(1, 0, 1, 7)",1244.62,115.8,1.7401,0,1.98,0.0,announcement,True,False,False,True
+Pink Different FoxLife,2017-11-13,14,365,ok,365,"(1, 1, 2)x(1, 0, 1, 7)",1244.62,314.7,1.7401,0,2.3259,0.0,announcement,True,False,False,True
+Pink Different FoxLife,2017-11-13,28,365,ok,365,"(1, 1, 2)x(1, 0, 1, 7)",1244.62,1628.9,4.0243,14,4.4281,0.0357,announcement,True,False,False,True
+Nella MIA Cucina Rai2,2019-09-12,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",625.02,3401.5,2.9405,3,6.3523,0.1429,announcement,True,True,False,True
+Nella MIA Cucina Rai2,2019-09-12,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",625.02,3757.9,2.9405,3,4.0698,0.0714,announcement,True,True,False,True
+Nella MIA Cucina Rai2,2019-09-12,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",625.02,4133.8,2.9405,3,2.7144,0.0357,announcement,True,True,False,True
+Nella MIA Cucina Rai2,2019-09-12,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1263.32,3412.3,2.9266,3,6.4624,0.1429,announcement,True,True,False,True
+Nella MIA Cucina Rai2,2019-09-12,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1263.32,3786.3,2.9266,3,4.1664,0.0714,announcement,True,True,False,True
+Nella MIA Cucina Rai2,2019-09-12,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1263.32,4179.9,2.9266,3,2.7673,0.0357,announcement,True,True,False,True
+Nella MIA Cucina Rai2,2019-09-16,7,180,ok,180,"(1, 1, 2)x(1, 0, 1, 7)",628.05,883.7,2.1921,0,2.6889,0.0,occurrence,True,True,False,True
+Nella MIA Cucina Rai2,2019-09-16,14,180,ok,180,"(1, 1, 2)x(1, 0, 1, 7)",628.05,1833.0,2.225,12,2.7492,0.0,occurrence,True,True,False,True
+Nella MIA Cucina Rai2,2019-09-16,28,180,ok,180,"(1, 1, 2)x(1, 0, 1, 7)",628.05,1861.1,2.225,12,1.8804,0.0,occurrence,True,True,False,True
+Nella MIA Cucina Rai2,2019-09-16,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1270.79,740.2,2.3493,0,2.11,0.0,occurrence,True,True,False,True
+Nella MIA Cucina Rai2,2019-09-16,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1270.79,1641.2,2.3493,0,2.3237,0.0,occurrence,True,True,False,True
+Nella MIA Cucina Rai2,2019-09-16,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1270.79,1538.5,2.3493,0,1.6315,0.0,occurrence,True,True,False,True
+TEDxRimini 2019,2019-11-20,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",635.61,-395.1,-0.1792,5,0.2285,0.0,announcement,False,False,False,False
+TEDxRimini 2019,2019-11-20,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",635.61,332.6,1.9063,12,1.3176,0.0,announcement,False,False,False,True
+TEDxRimini 2019,2019-11-20,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",635.61,1570.9,2.3374,19,1.7477,0.0,announcement,False,False,False,True
+TEDxRimini 2019,2019-11-20,7,365,ok,365,"(1, 1, 2)x(1, 0, 1, 7)",1272.74,-443.5,-0.34,5,0.2088,0.0,announcement,False,False,False,False
+TEDxRimini 2019,2019-11-20,14,365,ok,365,"(1, 1, 2)x(1, 0, 1, 7)",1272.74,247.6,1.8837,12,1.2186,0.0,announcement,False,False,False,True
+TEDxRimini 2019,2019-11-20,28,365,ok,365,"(1, 1, 2)x(1, 0, 1, 7)",1272.74,1400.6,2.235,19,1.6166,0.0,announcement,False,False,False,True
+TEDxRimini 2019,2019-12-14,7,180,ok,180,"(2, 1, 2)x(1, 0, 1, 7)",637.42,1703.1,2.3102,5,4.2387,0.0,occurrence,True,False,False,True
+TEDxRimini 2019,2019-12-14,14,180,ok,180,"(2, 1, 2)x(1, 0, 1, 7)",637.42,1969.5,2.3102,5,2.955,0.0,occurrence,True,False,False,True
+TEDxRimini 2019,2019-12-14,28,180,ok,180,"(2, 1, 2)x(1, 0, 1, 7)",637.42,2827.1,2.3102,5,2.4229,0.0,occurrence,True,False,False,True
+TEDxRimini 2019,2019-12-14,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1291.41,1717.4,2.3488,5,4.3572,0.0,occurrence,True,False,False,True
+TEDxRimini 2019,2019-12-14,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1291.41,1986.2,2.3488,5,3.0048,0.0,occurrence,True,False,False,True
+TEDxRimini 2019,2019-12-14,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1291.41,2849.9,2.3488,5,2.451,0.0,occurrence,True,False,False,True
+Novel Pre-Order,2021-03-09,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",637.29,3463.5,4.223,6,21.0843,0.2857,announcement,True,False,False,True
+Novel Pre-Order,2021-03-09,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",637.29,3850.3,4.223,6,12.1044,0.1429,announcement,True,False,False,True
+Novel Pre-Order,2021-03-09,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",637.29,8279.0,4.8789,22,12.8945,0.1429,announcement,True,False,False,True
+Novel Pre-Order,2021-03-09,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1298.05,3449.0,4.1165,6,19.4449,0.2857,announcement,True,False,False,True
+Novel Pre-Order,2021-03-09,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1298.05,3819.0,4.1165,6,11.1041,0.1429,announcement,True,False,False,True
+Novel Pre-Order,2021-03-09,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1298.05,8216.6,4.7963,22,11.8341,0.1429,announcement,True,False,False,True
+Novel Pre-Order,2021-04-20,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",655.56,1156.4,2.402,0,4.0954,0.0,occurrence,True,False,False,True
+Novel Pre-Order,2021-04-20,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",655.56,1811.8,2.402,0,3.4181,0.0,occurrence,True,False,False,True
+Novel Pre-Order,2021-04-20,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",655.56,2467.5,2.402,0,2.6444,0.0,occurrence,True,False,False,True
+Novel Pre-Order,2021-04-20,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1303.48,1180.3,2.4085,0,4.3754,0.0,occurrence,True,False,False,True
+Novel Pre-Order,2021-04-20,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1303.48,1854.2,2.4085,0,3.6236,0.0,occurrence,True,False,False,True
+Novel Pre-Order,2021-04-20,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1303.48,2549.2,2.4085,0,2.7968,0.0,occurrence,True,False,False,True
+Tutte le volte Podcast,2022-01-19,7,180,ok,180,"(2, 1, 2)x(1, 0, 1, 7)",616.62,2021.6,3.2929,1,5.0886,0.1429,announcement,True,False,False,True
+Tutte le volte Podcast,2022-01-19,14,180,ok,180,"(2, 1, 2)x(1, 0, 1, 7)",616.62,1808.8,3.2929,1,2.8779,0.0714,announcement,True,False,False,True
+Tutte le volte Podcast,2022-01-19,28,180,ok,180,"(2, 1, 2)x(1, 0, 1, 7)",616.62,5315.3,3.2929,1,3.8009,0.1071,announcement,True,False,False,True
+Tutte le volte Podcast,2022-01-19,7,365,ok,365,"(2, 1, 2)x(1, 0, 1, 7)",1327.92,2021.9,3.1088,1,5.0924,0.1429,announcement,True,False,False,True
+Tutte le volte Podcast,2022-01-19,14,365,ok,365,"(2, 1, 2)x(1, 0, 1, 7)",1327.92,1805.5,3.1088,1,2.8681,0.0714,announcement,True,False,False,True
+Tutte le volte Podcast,2022-01-19,28,365,ok,365,"(2, 1, 2)x(1, 0, 1, 7)",1327.92,5301.8,3.1088,1,3.774,0.0357,announcement,True,False,False,True
+Solo Tour Launch,2023-07-03,7,180,ok,180,"(1, 1, 2)x(1, 0, 1, 7)",586.99,35.0,1.2007,2,1.0858,0.0,announcement,True,False,False,False
+Solo Tour Launch,2023-07-03,14,180,ok,180,"(1, 1, 2)x(1, 0, 1, 7)",586.99,14.5,1.4286,8,1.0174,0.0,announcement,True,False,False,False
+Solo Tour Launch,2023-07-03,28,180,ok,180,"(1, 1, 2)x(1, 0, 1, 7)",586.99,4495.1,3.8653,18,3.7562,0.0357,announcement,True,False,False,True
+Solo Tour Launch,2023-07-03,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1257.65,3.2,1.3094,1,1.0073,0.0,announcement,True,False,False,False
+Solo Tour Launch,2023-07-03,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1257.65,-42.8,1.3094,1,0.9519,0.0,announcement,True,False,False,False
+Solo Tour Launch,2023-07-03,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1257.65,4339.0,3.681,18,3.4281,0.0357,announcement,True,False,False,True
+Solo Tour Launch,2023-04-15,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",596.53,603.8,2.186,0,3.0597,0.0,occurrence,True,False,False,True
+Solo Tour Launch,2023-04-15,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",596.53,1233.9,2.2664,13,3.0528,0.0,occurrence,True,False,False,True
+Solo Tour Launch,2023-04-15,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",596.53,1492.9,2.2664,13,2.2255,0.0,occurrence,True,False,False,True
+Solo Tour Launch,2023-04-15,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1274.22,645.9,2.3221,0,3.5718,0.0,occurrence,True,False,False,True
+Solo Tour Launch,2023-04-15,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1274.22,1229.6,2.3221,0,3.031,0.0,occurrence,True,False,False,True
+Solo Tour Launch,2023-04-15,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1274.22,1489.9,2.3221,0,2.2201,0.0,occurrence,True,False,False,True
+Avanguardia Pura Tour,2024-06-14,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",619.82,662.6,2.0151,3,3.2053,0.0,announcement,True,False,False,True
+Avanguardia Pura Tour,2024-06-14,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",619.82,1237.3,2.5926,7,3.1678,0.0,announcement,True,False,False,True
+Avanguardia Pura Tour,2024-06-14,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",619.82,1757.8,2.5926,7,2.5889,0.0,announcement,True,False,False,True
+Avanguardia Pura Tour,2024-06-14,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1264.45,646.6,1.9165,3,3.0434,0.0,announcement,True,False,False,True
+Avanguardia Pura Tour,2024-06-14,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1264.45,1216.9,2.6147,7,3.0585,0.0,announcement,True,False,False,True
+Avanguardia Pura Tour,2024-06-14,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1264.45,1718.5,2.6147,7,2.5002,0.0,announcement,True,False,False,True
+Avanguardia Pura Tour,2025-01-12,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",574.66,72.7,1.5083,1,1.5621,0.0,occurrence,True,False,False,True
+Avanguardia Pura Tour,2025-01-12,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",574.66,185.6,2.2358,8,1.7154,0.0,occurrence,True,False,False,True
+Avanguardia Pura Tour,2025-01-12,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",574.66,244.7,2.2358,8,1.4712,0.0,occurrence,True,False,False,True
+Avanguardia Pura Tour,2025-01-12,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1248.69,85.2,1.6901,1,1.7294,0.0,occurrence,True,False,False,True
+Avanguardia Pura Tour,2025-01-12,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1248.69,213.6,2.3758,8,1.9227,0.0,occurrence,True,False,False,True
+Avanguardia Pura Tour,2025-01-12,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1248.69,303.2,2.3758,8,1.6581,0.0,occurrence,True,False,False,True
+Etna Comics 2025,2025-04-10,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",549.66,469.2,2.9057,4,3.3484,0.1429,announcement,False,True,False,True
+Etna Comics 2025,2025-04-10,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",549.66,435.9,2.9057,4,2.1088,0.0714,announcement,False,True,False,True
+Etna Comics 2025,2025-04-10,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",549.66,1580.3,2.9887,23,3.0296,0.0714,announcement,False,True,False,True
+Etna Comics 2025,2025-04-10,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1197.61,465.4,2.8892,4,3.2864,0.1429,announcement,False,True,False,True
+Etna Comics 2025,2025-04-10,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1197.61,429.4,2.8892,4,2.0745,0.0714,announcement,False,True,False,True
+Etna Comics 2025,2025-04-10,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1197.61,1566.4,2.964,23,2.9763,0.0714,announcement,False,True,False,True
+Etna Comics 2025,2025-04-10,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",549.66,469.2,2.9057,4,3.3484,0.1429,occurrence,False,True,False,True
+Etna Comics 2025,2025-04-10,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",549.66,435.9,2.9057,4,2.1088,0.0714,occurrence,False,True,False,True
+Etna Comics 2025,2025-04-10,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",549.66,1580.3,2.9887,23,3.0296,0.0714,occurrence,False,True,False,True
+Etna Comics 2025,2025-04-10,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1197.61,465.4,2.8892,4,3.2864,0.1429,occurrence,False,True,False,True
+Etna Comics 2025,2025-04-10,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1197.61,429.4,2.8892,4,2.0745,0.0714,occurrence,False,True,False,True
+Etna Comics 2025,2025-04-10,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1197.61,1566.4,2.964,23,2.9763,0.0714,occurrence,False,True,False,True
+The Traitors Italia S2,2025-11-07,7,180,ok,180,"(1, 1, 2)x(1, 0, 1, 7)",594.51,59.2,1.7168,5,1.1592,0.0,announcement,True,False,False,False
+The Traitors Italia S2,2025-11-07,14,180,ok,180,"(1, 1, 2)x(1, 0, 1, 7)",594.51,572.1,2.3767,11,1.844,0.0,announcement,True,False,False,True
+The Traitors Italia S2,2025-11-07,28,180,ok,180,"(1, 1, 2)x(1, 0, 1, 7)",594.51,781.2,2.3767,11,1.6109,0.0,announcement,True,False,False,True
+The Traitors Italia S2,2025-11-07,7,365,ok,365,"(1, 1, 2)x(1, 0, 1, 7)",1211.49,78.0,1.6836,5,1.2209,0.0,announcement,True,False,False,True
+The Traitors Italia S2,2025-11-07,14,365,ok,365,"(1, 1, 2)x(1, 0, 1, 7)",1211.49,599.0,2.4558,11,1.9201,0.0,announcement,True,False,False,True
+The Traitors Italia S2,2025-11-07,28,365,ok,365,"(1, 1, 2)x(1, 0, 1, 7)",1211.49,810.6,2.4558,11,1.6488,0.0,announcement,True,False,False,True
+Rai Radio2 Broadcast,2017-09-15,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",611.7,65.3,1.9307,5,1.5551,0.0,occurrence,False,False,False,True
+Rai Radio2 Broadcast,2017-09-15,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",611.7,132.6,1.9307,5,1.5608,0.0,occurrence,False,False,False,True
+Rai Radio2 Broadcast,2017-09-15,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",611.7,760.5,2.7374,27,2.6064,0.0,occurrence,False,False,False,True
+Rai Radio2 Broadcast,2017-09-15,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1228.52,62.5,1.9881,5,1.5189,0.0,occurrence,False,False,False,True
+Rai Radio2 Broadcast,2017-09-15,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1228.52,127.0,1.9881,5,1.5248,0.0,occurrence,False,False,False,True
+Rai Radio2 Broadcast,2017-09-15,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1228.52,748.8,2.7133,27,2.5434,0.0357,occurrence,False,False,False,True
+Macchianera Award,2019-11-05,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",629.34,1459.2,2.5045,5,3.7488,0.0,occurrence,True,False,False,True
+Macchianera Award,2019-11-05,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",629.34,1942.5,2.5045,5,2.8527,0.0,occurrence,True,False,False,True
+Macchianera Award,2019-11-05,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",629.34,2437.3,2.5045,5,2.1646,0.0,occurrence,True,False,False,True
+Macchianera Award,2019-11-05,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1269.63,1407.2,2.4031,5,3.4143,0.0,occurrence,True,False,False,True
+Macchianera Award,2019-11-05,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1269.63,1856.2,2.4031,5,2.6356,0.0,occurrence,True,False,False,True
+Macchianera Award,2019-11-05,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1269.63,2275.3,2.4031,5,2.0092,0.0,occurrence,True,False,False,True
+Avanguardia Ticket Sales,2024-06-19,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",620.92,366.8,2.4179,2,2.1861,0.0,occurrence,True,False,False,True
+Avanguardia Ticket Sales,2024-06-19,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",620.92,886.8,2.4179,2,2.4652,0.0,occurrence,True,False,False,True
+Avanguardia Ticket Sales,2024-06-19,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",620.92,1140.6,2.4179,2,1.9478,0.0,occurrence,True,False,False,True
+Avanguardia Ticket Sales,2024-06-19,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1268.43,360.7,2.4963,2,2.1441,0.0,occurrence,True,False,False,True
+Avanguardia Ticket Sales,2024-06-19,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1268.43,861.7,2.4963,2,2.367,0.0,occurrence,True,False,False,True
+Avanguardia Ticket Sales,2024-06-19,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1268.43,1082.8,2.4963,2,1.8586,0.0,occurrence,True,False,False,True
+Media Breakup Confirmation,2025-02-24,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",558.18,104.0,2.0712,3,1.68,0.0,occurrence,True,False,False,True
+Media Breakup Confirmation,2025-02-24,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",558.18,550.5,2.5236,10,2.6308,0.0,occurrence,True,False,False,True
+Media Breakup Confirmation,2025-02-24,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",558.18,751.0,2.5236,10,2.1176,0.0,occurrence,True,False,False,True
+Media Breakup Confirmation,2025-02-24,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1233.1,94.2,1.7817,3,1.5788,0.0,occurrence,True,False,False,True
+Media Breakup Confirmation,2025-02-24,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1233.1,568.2,2.7638,10,2.7771,0.0,occurrence,True,False,False,True
+Media Breakup Confirmation,2025-02-24,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1233.1,789.1,2.7638,10,2.2449,0.0,occurrence,True,False,False,True
+Autumn Tour Expansion,2025-03-27,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",545.79,415.1,2.1127,5,4.6143,0.0,occurrence,True,False,False,True
+Autumn Tour Expansion,2025-03-27,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",545.79,604.1,2.1127,5,3.5281,0.0,occurrence,True,False,False,True
+Autumn Tour Expansion,2025-03-27,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",545.79,1189.1,3.3805,18,3.4625,0.0357,occurrence,True,False,False,True
+Autumn Tour Expansion,2025-03-27,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1211.16,406.3,2.0015,5,4.2846,0.0,occurrence,True,False,False,True
+Autumn Tour Expansion,2025-03-27,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1211.16,589.7,2.0015,5,3.3275,0.0,occurrence,True,False,False,True
+Autumn Tour Expansion,2025-03-27,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1211.16,1160.6,3.32,18,3.2694,0.0357,occurrence,True,False,False,True
+Autumn Tour Re-ignition,2025-10-19,7,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",586.47,2257.8,4.6514,2,34.6095,0.4286,occurrence,True,False,False,True
+Autumn Tour Re-ignition,2025-10-19,14,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",586.47,3332.3,4.6514,2,24.3468,0.3571,occurrence,True,False,False,True
+Autumn Tour Re-ignition,2025-10-19,28,180,ok,180,"(0, 1, 2)x(1, 0, 1, 7)",586.47,4291.6,4.6514,2,15.7265,0.2857,occurrence,True,False,False,True
+Autumn Tour Re-ignition,2025-10-19,7,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1189.77,2244.4,4.4751,2,28.8388,0.4286,occurrence,True,False,False,True
+Autumn Tour Re-ignition,2025-10-19,14,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1189.77,3300.7,4.4751,2,19.9393,0.3571,occurrence,True,False,False,True
+Autumn Tour Re-ignition,2025-10-19,28,365,ok,365,"(0, 1, 2)x(1, 0, 1, 7)",1189.77,4227.4,4.4751,2,12.8864,0.2857,occurrence,True,False,False,True

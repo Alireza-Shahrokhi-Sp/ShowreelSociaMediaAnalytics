@@ -1,0 +1,39 @@
+{
+  "cv_balanced_accuracy_mean": 0.4624123597331701,
+  "cv_balanced_accuracy_std": 0.008960915556218424,
+  "cv_macro_f1_mean": 0.36407743755546906,
+  "cv_macro_f1_std": 0.006117482194448871,
+  "cv_weighted_f1_mean": 0.4895673479268627,
+  "holdout_macro_f1": 0.3573227713413472,
+  "holdout_balanced_acc": 0.46071315635957993,
+  "classes": [
+    "THE_ADVISOR",
+    "THE_CASUAL_COMPLIMENTER",
+    "THE_CRITIC",
+    "THE_EMOJI_REACTOR",
+    "THE_HATER",
+    "THE_INQUIRER",
+    "THE_SPAMMER",
+    "THE_STORYTELLER",
+    "THE_SUPERFAN",
+    "THE_TAGGER"
+  ],
+  "feature_importances": {
+    "total_comments": 0.0323672000836869,
+    "activity_span_days": 0.05777831837569026,
+    "mean_hours_to_comment": 0.0,
+    "pct_comments_under_1h": 0.0,
+    "reply_ratio": 0.0,
+    "mean_word_count": 0.37989185799490727,
+    "mean_sentiment_score": 0.22210353884789338,
+    "std_sentiment_score": 0.04014568601094374,
+    "sarcasm_rate": 0.012772769532940337,
+    "mean_toxicity": 0.0,
+    "mean_intensity": 0.0,
+    "pct_positive": 0.06263546275459114,
+    "pct_negative": 0.04076602084377977,
+    "pct_neutral": 0.05942955741577631,
+    "n_comments_in_B": 0.038661480193998385,
+    "n_distinct_posts": 0.053448107945792564
+  }
+}

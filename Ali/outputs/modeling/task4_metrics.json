@@ -1,0 +1,16 @@
+{
+  "chi2_persona_vs_sentiment": {
+    "chi2": 14139.963769802192,
+    "p": 0.0,
+    "dof": 18
+  },
+  "chi2_persona_vs_contentform": {
+    "chi2": 3878.0109615605306,
+    "p": 0.0,
+    "dof": 36
+  },
+  "kruskal_wallis_sentiment_score": {
+    "H": 15792.400273632733,
+    "p": 0.0
+  }
+}

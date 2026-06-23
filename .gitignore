@@ -20,16 +20,54 @@ Ali/Backup
 Ali/audio_recovery/
 Ali/playwright_downloads/
 Ali/playwright_ig_profile/
-# Heavy derived comment data — exceeds GitHub's 100MB limit (use Git LFS if it must be versioned)
-Ali/Output/Prepared Comments/
-Ali/outputs/*.jsonl
-Ali/outputs/*.csv
-Ali/outputs/*.json
-Ali/outputs/*.parquet
+# Heavy derived comment data — exceeds GitHub's 100MB limit
+Ali/outputs/comments_ml.parquet
+Ali/outputs/comments_llm.jsonl
+Ali/outputs/sentiment_input.jsonl
+Ali/outputs/sentiment_predictions_partial.jsonl
+Ali/outputs/stage2_input.jsonl
+Ali/outputs/Prepared Comments/
+Ali/outputs/stage1_persona/*.jsonl
+Ali/outputs/stage1_persona/*.csv
+Ali/outputs/stage1_persona/*.json
+Ali/outputs/stage1_persona/*.parquet
+Ali/outputs/stage2_persona/*.jsonl
+Ali/outputs/stage2_persona/*.csv
+Ali/outputs/stage2_persona/*.json
+Ali/outputs/stage2_persona/*.parquet
+Ali/outputs/stage2_sentiment/*.jsonl
+Ali/outputs/stage2_sentiment/*.csv
+Ali/outputs/stage2_sentiment/*.json
+Ali/outputs/stage2_sentiment/*.parquet
 Ali/llm_wiki_afb
 Ali/Claude.md
+
+# P1 cleanup — generated / local-only (never track)
+node_modules/
+test_env/
+__pycache__/
+Ali/__pycache__/
+Ali/_debug_profile/
+Ali/_api_dump/
+Ali/.obsidian/
+Ali/handoff_temp.md
+
+# Notebook backups
+*.ipynb.bak
+*.ipynb.*_bak
+
+# Legacy output directory (migrated to Ali/outputs/)
+Ali/Output/
+
+# Batch job results (parsed into outputs/ parquets)
+Ali/batch_results/
+
+# EDA — keep PNG, skip SVG
+Ali/Sentiment_EDA/outputs/*.svg
+
 # Common heavy media — never push raw media blobs
 *.mp4
 *.mov
 *.m4a
 *.wav
+.Rproj.user

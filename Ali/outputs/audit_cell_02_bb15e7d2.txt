@@ -1,1 +1,0 @@
-!pip install -q google-genai google-cloud-storage gcsfs pandas pyarrow tqdm emoji

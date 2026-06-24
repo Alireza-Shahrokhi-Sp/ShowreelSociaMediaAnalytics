@@ -47,6 +47,7 @@ node_modules/
 test_env/
 __pycache__/
 Ali/__pycache__/
+Ali/persona/__pycache__/
 Ali/_debug_profile/
 Ali/_api_dump/
 Ali/.obsidian/
@@ -62,8 +63,43 @@ Ali/Output/
 # Batch job results (parsed into outputs/ parquets)
 Ali/batch_results/
 
-# EDA — keep PNG, skip SVG
+# Duplicate / legacy figures (canonical copy is outputs/figs/)
+Ali/figs/
+
+# Superseded data files
+Ali/enriched_post_vibe_matrix.parquet
+
+# Download-phase artifacts (completed)
+Ali/reels_links.txt
+Ali/processed_urls.txt
+Ali/feed_links.txt
+
+# Dev-time debug/audit artifacts in outputs/
+Ali/outputs/audit_cell_*.txt
+Ali/outputs/orig_cell_*.txt
+Ali/outputs/cell_audit.txt
+Ali/outputs/data_cell_check.txt
+Ali/outputs/data_cell_full.txt
+Ali/outputs/persona_key_cells.txt
+Ali/outputs/persona_survey.txt
+Ali/outputs/preview_cell.txt
+Ali/outputs/retrieve_fn.txt
+Ali/outputs/retrieve_response_texts_full.txt
+Ali/outputs/selected_features.txt
+Ali/outputs/original_notebook.json
+
+# Batch job manifests / retry files (ephemeral)
+Ali/outputs/sentiment_job.json
+Ali/outputs/sentiment_jobs.json
+Ali/outputs/sentiment_manifest.json
+Ali/outputs/stage2_job.json
+Ali/outputs/sentiment_input_retry*.jsonl
+Ali/outputs/sentiment_instagram.csv
+Ali/outputs/cluster_persona_map_instagram.json
+
+# SVG figures — keep PNG only
 Ali/Sentiment_EDA/outputs/*.svg
+Ali/outputs/figs/*.svg
 
 # Common heavy media — never push raw media blobs
 *.mp4

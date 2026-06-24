@@ -25,6 +25,11 @@ This repository analyses the social media community of **Camihawke** (Show Reel 
 ```
 AFB_Lab/
 |-- Ali/                  Main analytics (sentiment, personas, modeling, EDA)
+|   |-- outputs/          Pipeline outputs (parquets, figs, model artifacts)
+|   |-- persona/          OOP persona pipeline package
+|   |-- Sentiment_EDA/    EDA notebooks + chart outputs
+|   |-- Archive/          Superseded scripts, plans, notebooks
+|   |-- llm_wiki_afb/     Internal Obsidian wiki
 |-- Data/                 Raw cleaned datasets (parquet) — source of truth
 |-- Mickey/               RFM/RCEDTG clustering and user lifecycle analysis
 |-- reza/                 YouTube transcript pipeline, NER, thumbnail CV
@@ -55,9 +60,14 @@ The primary working directory. All production pipelines live here as Jupyter not
 
 | Notebook | Purpose |
 |----------|---------|
-| `EDA.ipynb` | Platform distributions, engagement metrics |
-| `Sentiment_EDA.ipynb` | Sentiment distribution validation, stratified samples |
 | `Vertex_Batch_Inference.ipynb` | GCP Vertex AI batch job tutorial |
+
+### EDA notebooks (`Sentiment_EDA/`)
+
+| Notebook | Purpose |
+|----------|---------|
+| `sentiment_eda.ipynb` | Sentiment distribution validation, stratified samples |
+| `persona_sentiment_rfm.ipynb` | Cross-analysis: personas x sentiment x RFM clusters |
 
 ### Python scripts
 
@@ -70,22 +80,6 @@ The primary working directory. All production pipelines live here as Jupyter not
 | `run_stage2_async_sample.py` | Same as above, 20% sample variant |
 | `merge_persona_runs.py` | Merge multiple Stage 2 runs by highest confidence per user |
 | `patch_persona_codenames.py` | Normalize hallucinated LLM codenames (e.g. missing `THE_` prefix) |
-
-### Notebook patch scripts (`outputs/`)
-
-Development-time scripts that programmatically patch notebook cells. Not run in production.
-
-| Script | Purpose |
-|--------|---------|
-| `patch_cells.py` | Patch sentiment_pipeline.ipynb config + client cells |
-| `patch_v2.py` | Full cell replacement for client + requests cells |
-| `patch_schema_serialization.py` | Inject Pydantic schema serialization into notebook |
-| `patch_schema_serialization_test.py` | Test harness for schema serialization |
-| `client_append.py` | Pydantic v2 response models (SentimentItem, RoomRead, SentimentResponse) |
-| `client_cell_new.py` | Full client cell replacement source |
-| `requests_cell_new.py` | Full requests cell replacement source (prompt + builder) |
-| `data_cell_new.py` | Data-loading cell: checks if comments are already loaded |
-| `persona_feature_cell_new.py` | Feature engineering cell for persona pipeline |
 
 ### Persona package (`persona/`)
 
@@ -106,6 +100,19 @@ Object-oriented CLI port of the persona pipeline. Run with `python -m persona <s
 ### Internal wiki (`llm_wiki_afb/`)
 
 A structured Obsidian-compatible wiki documenting every pipeline, schema, and design decision. Start at [Ali/llm_wiki_afb/index.md](Ali/llm_wiki_afb/index.md).
+
+### Archive (`Archive/`)
+
+Superseded notebooks, one-shot scripts, and historical plans. Nothing here is imported by production code.
+
+| Subdirectory | Contents |
+|-------------|----------|
+| `patches/` | Notebook cell-patching scripts (patch_cells, client_cell_new, etc.) |
+| `eda_scripts/` | One-shot EDA inject/strip/investigate scripts |
+| `plans/` | Historical implementation plans (EVENT_IMPACT, MODELING, VIRALITY) |
+| `ig_media_scripts/` | Legacy Instagram media download/processing scripts |
+| `colab_download_pipeline/` | Colab-based media download pipeline |
+| `to_download/` | Completed download queue files |
 
 ---
 

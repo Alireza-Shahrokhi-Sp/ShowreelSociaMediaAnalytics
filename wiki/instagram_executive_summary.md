@@ -5,7 +5,7 @@ sources:
   - Ali/outputs/modeling/
   - Ali/outputs/virality/
   - Mickey/modelling/
-  - Ali/MODELING_PLAN.md
+  - Ali/Archive/plans/MODELING_PLAN.md
 created: 2026-06-14
 updated: 2026-06-14
 confidence: high
@@ -345,7 +345,7 @@ Three Beta-Binomial regression models on post-level lifecycle data. Target: prop
 | ig_multimodal_final.parquet | 1,493 | post | Task 3 predictors, post metadata |
 | ig_posts_cleaned.parquet | 1,493 | post | Engagement metrics (reach, likes) |
 
-All models use stratified 5-fold CV with `random_state=42`. See [Ali/MODELING_PLAN.md](../Ali/MODELING_PLAN.md) for full guardrails and forbidden files.
+All models use stratified 5-fold CV with `random_state=42`. See [Ali/Archive/plans/MODELING_PLAN.md](../Ali/Archive/plans/MODELING_PLAN.md) for full guardrails and forbidden files.
 
 ---
 
@@ -369,6 +369,6 @@ All models use stratified 5-fold CV with `random_state=42`. See [Ali/MODELING_PL
 
 ## References
 
-- [Ali/MODELING_PLAN.md](../Ali/MODELING_PLAN.md) — prescriptive guardrails, data dictionaries, §3 caveats
+- [Ali/Archive/plans/MODELING_PLAN.md](../Ali/Archive/plans/MODELING_PLAN.md) — prescriptive guardrails, data dictionaries, §3 caveats
 - [Ali/outputs/modeling/MODELING_REPORT.md](../Ali/outputs/modeling/MODELING_REPORT.md) — detailed task walkthroughs
 - [instagram_advanced_analytics.md](instagram_advanced_analytics.md) — Event impact & virality pipelines

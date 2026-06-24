@@ -1,3 +1,0 @@
-# When the job is SUCCEEDED, run the matching line:
-retrieve_stage1()
-#retrieve_stage2()

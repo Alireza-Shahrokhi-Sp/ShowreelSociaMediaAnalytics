@@ -1,6 +1,0 @@
-{
-  "name": "projects/840606707685/locations/us-central1/batchPredictionJobs/3610069941006368768",
-  "dest": "gs://afb_showreel/persona_batch/output/stage2/",
-  "state": "JobState.JOB_STATE_PENDING",
-  "submitted_at": "2026-06-08T02:12:12.077775"
-}

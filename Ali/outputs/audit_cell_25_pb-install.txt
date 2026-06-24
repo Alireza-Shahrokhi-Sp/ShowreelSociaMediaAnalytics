@@ -1,2 +1,0 @@
-# Pathway B dependencies (run once)
-!pip install -q umap-learn hdbscan scikit-learn

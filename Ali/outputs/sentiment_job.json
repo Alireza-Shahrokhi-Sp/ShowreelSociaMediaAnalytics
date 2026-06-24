@@ -1,6 +1,0 @@
-{
-  "name": "projects/726524412994/locations/europe-west1/batchPredictionJobs/2287678458647543808",
-  "dest": "gs://afb_project2/sentiment_batch/output/",
-  "state": "JobState.JOB_STATE_PENDING",
-  "submitted_at": "2026-06-10T19:37:54.735440"
-}
